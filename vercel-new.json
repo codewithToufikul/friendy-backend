@@ -1,0 +1,19 @@
+{
+  "name": "friendy-backend-public",
+  "version": 2,
+  "builds": [
+    {
+      "src": "simple-working-server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/simple-working-server.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
