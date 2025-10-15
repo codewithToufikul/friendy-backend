@@ -9,6 +9,7 @@ import buildCorsOptions from './config/cors.js';
 import applySecurity from './config/security.js';
 import { pool } from './config/db.js';
 import { userRouter } from './routers/appRouter.js';
+import { hostRoute } from './routers/hostRouter.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -55,8 +56,7 @@ try {
 }
 
 try {
-  const { default: hostRouter } = await import('./routers/hostRouter.js');
-  app.use('/api/host', hostRouter); // e.g., /host/auth/login
+  app.use('/api/host', hostRoute);
 } catch (e) {
   console.warn('hostRouter not loaded:', e.message);
 }
