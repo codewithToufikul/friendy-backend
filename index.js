@@ -63,7 +63,7 @@ try {
 
 try {
   const { default: adminRouter } = await import('./routers/adminRouter.js');
-  app.use('api/admin', adminRouter); // e.g., /admin/dashboard
+  app.use('/api/admin', adminRouter); // e.g., /admin/dashboard
 } catch (e) {
   console.warn('adminRouter not loaded:', e.message);
 }
